@@ -89,7 +89,48 @@ function setmsg(str) {document.getElementById("msg").innerHTML = str;}
    spreadsheet.InitializeSpreadsheetControl("tableeditor");
    spreadsheet.ExecuteCommand('redisplay', '');
 
+   // Done initialization
 
+//
+// * * * FUNCTIONS * * *
+//
+
+//
+// Example of how to get the serialized data
+//
+
+function dosave() {
+   savestr = spreadsheet.CreateSpreadsheetSave();
+   }
+
+//
+// Example of how to reload the serialized data
+//
+// Don't do this when a command or displaying is being executed. It wipes out the sheet without checking.
+// (If you do this on an initial load, skip the 'redisplay' above.)
+//
+
+// This is just as a demo to show we might have graphing someday. It may be better to have it
+// in a different activity.
+
+function DoGraph(objs, t) {
+ return;
+
+   }
+
+// This is where loading help text might go:
+
+function DoHelp(s, t) {
+
+   var hview = s.views.help.element;
+
+   var str =
+'HELP TEXT FOLLOWED BY ABOUT TEXT AND LEGAL INFORMATION:<br><br> '+
+'Version 0.7.10<br><br> ';
+
+   hview.firstChild.innerHTML = str;
+
+   }
 
 </script>
 </body>
