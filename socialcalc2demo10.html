@@ -348,26 +348,6 @@ function dosave() {
 // (If you do this on an initial load, skip the 'redisplay' above.)
 //
 
-function doreload() {
-
-   var parts = spreadsheet.DecodeSpreadsheetSave(savestr);
-   if (parts) {
-      if (parts.sheet) {
-         spreadsheet.sheet.ResetSheet();
-         spreadsheet.ParseSheetSave(savestr.value.substring(parts.sheet.start, parts.sheet.end));
-         }
-      if (parts.edit) {
-         spreadsheet.editor.LoadEditorSettings(savestr.value.substring(parts.edit.start, parts.edit.end));
-         }
-      }
-   if (spreadsheet.editor.context.sheetobj.attribs.recalc=="off") {
-      spreadsheet.ExecuteCommand('redisplay', '');
-      }
-   else {
-      spreadsheet.ExecuteCommand('recalc', '');
-      }
-   }
-
 // This is just as a demo to show we might have graphing someday. It may be better to have it
 // in a different activity.
 
