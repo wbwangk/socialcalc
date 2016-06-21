@@ -46,24 +46,6 @@ function setmsg(str) {document.getElementById("msg").innerHTML = str;}
 
    // Add Plain
 
-   spreadsheet.tabnums.plain = spreadsheet.tabs.length;
-   spreadsheet.tabs.push({name: "plain", text: "Plain", html:
-      '<div id="%id.plaintools" style="display:none;">'+
-      ' <div style="%tbt.">&nbsp;</div>'+
-      '</div>',
-      view: "plain",
-      onclick:
-         function(s, t) {
-            s.views.plain.element.innerHTML = s.CreateSheetHTML();
-            },
-      onclickFocus: true
-      });
-
-   spreadsheet.views["plain"] = {name: "plain",
-      divStyle: "border:1px solid black;overflow:auto;",
-      html: 'Plain View'
-      };
-
    // Add Graph
 
    spreadsheet.tabnums.graph = spreadsheet.tabs.length;
